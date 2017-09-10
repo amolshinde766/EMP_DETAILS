@@ -13,8 +13,8 @@
            margin-left: 40px;
          } 
         .first {
-            border: 3px solid black;
-            background-color:white;
+            
+           background-color:white;
         }
           
        th {
@@ -119,9 +119,7 @@
          
         <asp:Button ID="btndelete" runat="server" CausesValidation="true" ValidationGroup="Group1" Text="Delete" OnClick="btndelete_Click" Height="45px" />
          
-        <asp:Button ID="btnshow" runat="server" CausesValidation="false" Text="Show" OnClick="btnshow_Click" Height="45px" />
-         
-            
+        <asp:Button ID="btnshow" runat="server" CausesValidation="false" Text="Show" OnClick="btnshow_Click" Height="45px" />    
                
         <br />
         <br />

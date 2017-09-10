@@ -14,7 +14,7 @@ namespace Test
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
       
         protected void btnupdate_Click(object sender, EventArgs e)
@@ -44,24 +44,41 @@ namespace Test
             show();
         }
 
-        protected void btnshow_Click(object sender, EventArgs e)
-        {
-            show();
-        }
-
         protected void btnadd_Click(object sender, EventArgs e)
         {
-            con.Open();
-            SqlCommand cmd = new SqlCommand("SpMyProcedure",con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@Action", "Insert");
-            cmd.Parameters.AddWithValue("@Name",txtname.Text);
-            cmd.Parameters.AddWithValue("@Address", txtadd.Text);
-            cmd.Parameters.AddWithValue("@Mob", txtmob.Text);
-            cmd.ExecuteNonQuery();
-            con.Close();
-            show();
+
+            
+                //con.Open();
+                //SqlCommand cmd1 = con.CreateCommand();
+                //cmd1.CommandType = CommandType.Text;
+                //cmd1.CommandText = ("Select * from Employee where Id='" + txtid.Text + "'");
+                //SqlDataAdapter sda = new SqlDataAdapter(cmd1);
+                //DataSet ds = new DataSet();
+                //sda.Fill(ds);
+                //con.Close();
+                //int i = ds.Tables[0].Rows.Count;
+                //if (i > 0 || txtid.Text=="")
+                //{
+                //    Label1.Text = ("Id" + txtid.Text + "Already Exists");
+                //}
+
+
+                //else
+                //{
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("SpMyProcedure", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Action", "Insert");
+                    cmd.Parameters.AddWithValue("@Name", txtname.Text);
+                    cmd.Parameters.AddWithValue("@Address", txtadd.Text);
+                    cmd.Parameters.AddWithValue("@Mob", txtmob.Text);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+
+                    show();
+            //}
         }
+
         public void show()
         {
             con.Open();
@@ -79,6 +96,11 @@ namespace Test
             txtname.Text = "";
             txtadd.Text = "";
             txtmob.Text = "";
+        }
+
+        protected void btnshow_Click(object sender, EventArgs e)
+        {
+            show();
         }
     }
 }
