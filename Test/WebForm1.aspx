@@ -74,6 +74,7 @@
             </td>
             <td>
                 <asp:TextBox ID="txtid" runat="server" Height="23px" ></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ValidationGroup="Group1" ControlToValidate="txtid" ErrorMessage="Please Enter ID" ForeColor="Red"></asp:RequiredFieldValidator>
               </td>
         </tr>
         <tr>
@@ -116,7 +117,7 @@
         
         <asp:Button ID="btnupdate" runat="server" CausesValidation="true" Text="Update" OnClick="btnupdate_Click" Height="45px" />
          
-        <asp:Button ID="btndelete" runat="server" CausesValidation="false" Text="Delete" OnClick="btndelete_Click" Height="45px" />
+        <asp:Button ID="btndelete" runat="server" CausesValidation="true" ValidationGroup="Group1" Text="Delete" OnClick="btndelete_Click" Height="45px" />
          
         <asp:Button ID="btnshow" runat="server" CausesValidation="false" Text="Show" OnClick="btnshow_Click" Height="45px" />
          
